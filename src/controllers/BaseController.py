@@ -1,4 +1,4 @@
-from helpers.model_config import Settings, get_settings
+from helpers.config import Settings, get_settings
 import random, string, os
 
 class BaseController:
