@@ -9,3 +9,14 @@ class DataChunk(BaseModel):
     chunk_metadata: dict
     chunk_order: int = Field(..., gt=0)
     chunk_project_id: ObjectId
+
+
+    @classmethod 
+    def get_indexes(cls):
+        return [
+            {
+                "key": [("chunk_project_id", 1)],
+                "name": "chunk_project_id_order_index_1",
+                "unique": False,
+            }
+        ]
